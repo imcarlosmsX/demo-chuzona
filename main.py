@@ -1,78 +1,47 @@
+#%%
+from matplotlib.hatch import SouthEastHatch
+from classes import Restaurant, User, Delivery
 
-from ctypes.wintypes import HLOCAL
-import math
+name = User("carlos")
 
-class Restaurant:
-    def __init__(self, menu):
-        self.menu = menu
+nombre = name.login()
 
-    def pedir (self, delivery):
-        print("Menú del restaurante.")
-        print("")
-        for i in self.menu:
-            print(i + ". " + self.menu[i][0]+"   ---    $"+ str (self.menu[i][1]))
-        num = str(input("digite el número de producto que desea pedir."))
-        print("")
-        print("Ha seleccionado el plato " + self.menu[num][0] + "que tiene un precio de $"+ str(self.menu[num][1]))
-        self.descrip_plato(num)
-        self.confirmation(num, delivery)
-        self.agregar(num)
-        
-        
+##domicilio = Delivery()
 
-    def cobro_total (self, plato):
+##domicilio.precio_dom()
 
-        a= self.menu[plato][1]
-        print("El pago es igual a "+str(a))
-    
-    def descrip_plato (self, plato):
-        print("El " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
-    
-    def confirmation (self, plato, delivery):
-
-        option = input("Digite 1 si quiere confirmar el pedido, 2 si quiere volver al menú anterior")
-        if (option == "2"):
-            self.pedir()
-        else:
-            print("El pago es igual a "+str(self.menu[plato][1] + delivery))
-    
-    def agregar (self, plato):
-        option = input("Digite 1 si quiere agregar otro plato, 2 si quiere ver el total de pago")
-        if (option == "2"):
-            self.pedir()
-        else:
-            print("El pago es igual a "+str(self.menu[plato][1]))
+prueba = Delivery()
+hola =prueba.hallar_dist(6.33607, -75.56119,6.17136,-75.58825)
+print(hola)
 
 
-class User:
-    def __init__(self, name) -> None:
-        self.name= name
+print("Bienvenido a la Chuzona señor(a) " + nombre[0])
 
-    def login(self):
-        name = input("ingrese su nombre")
-        direccion = input("ingrese su dirección de residencia.")
-        juntar = [name, direccion]
-        return juntar
+xd = {
+        "1": ["Mazorca desgranada", 14000, 
+        "Mazorca americana desgranada,queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "2": ["Desgranado de carne", 18000, 
+        "Carne de res, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "3": ["Desgranado de pollo", 18000, 
+        "Pechuga de pollo, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "4": ["Desgranado mixto", 18000, 
+        "Carne de res y pollo, acompañadas de bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "5": ["Desgranado combinado", 21000, 
+        "Butifarra, chorizo, carne de res, pollo,lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "6": ["Desgranado ranchero especial", 22000, 
+        "Salchicha Ranchera, pollo, mazorca, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "7": ["Desgranado suizo especial", 24000, 
+        "Salchiza Suiza, Pollo, mazorca, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "8": ["Desgranado de la casa", 28000, 
+        "Salchicha Ranchera, butifarra, pollo, carne de res, mazorca, tocineta, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "9": ["Desgranado especial de la costa", 24000, 
+        "Butifarra, chorizo, carne de res, pollo, mazorca, tocineta, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "10": ["Mazorca desgranada especial", 16000, 
+        "Mazorca americana desgranada, trozos de tocineta, queso costeño rayado y papitas paja acompañado con salsa tártara."]
+    }
 
+a = Restaurant(xd)
+a.pedir(hola)
 
-class Delivery: 
+# %%
 
-    def __init__(self) -> None:
-        pass
-
-    def hallar_dist (self,lat1,lon1,lat2,lon2):
-        rad = math.pi/180
-        self.dta_lat = lat2-lat1
-        self.dta_lon = lon2-lon1
-        radio = 6373.795477596
-        in_raiz = (math.sin(self.dta_lat*rad/2)**2 + math.cos(lat1*rad)*math.cos(lat2*rad)*math.sin(self.dta_lon*rad/2)**2)
-        dist = 2*radio*math.asin(math.sqrt(in_raiz))
-        if (dist < 1.0): 
-            precio_dom = 3000
-        else:
-            if(dist > 1.0 or math.dist < 3.0):
-                precio_dom = 5000
-            else:
-                if(dist > 3.0):
-                    precio_dom = 8000
-        return precio_dom
