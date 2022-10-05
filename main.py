@@ -1,5 +1,4 @@
 #%%
-from matplotlib.hatch import SouthEastHatch
 from classes import Restaurant, User, Delivery
 
 name = User("carlos")
