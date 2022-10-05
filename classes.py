@@ -12,20 +12,20 @@ class Restaurant:
         print("")
         for i in self.menu:
             print(i + ". " + self.menu[i][0]+"   ---    $"+ str (self.menu[i][1]))
-        num = str(input("digite el número de producto que desea pedir."))
         print("")
-        print("Ha seleccionado el plato " + self.menu[num][0] + "que tiene un precio de $"+ str(self.menu[num][1]))
+        num = str(input("Digite el número de producto que desea pedir.      "))
+        print("")
         self.plata += self.menu[num][1]
-        print (str(self.plata))
         self.descrip_plato(num)
         self.confirmation(num, delivery)
         
         
     def descrip_plato (self, plato):
-        print("El plato" + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
+        print("El plato " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
     
     def confirmation (self, plato, delivery):
 
+        print("")
         option = input("Digite 1 si quiere confirmar el pedido, 2 si quiere volver al menú anterior y cancelar todo el pedido:      ")
         if (option == "2"):
             self.plata = 0
@@ -34,12 +34,14 @@ class Restaurant:
             self.agregar(plato, delivery)
     
     def agregar (self, plato, delivery):
+        print("")
         option = input("Digite 1 si quiere agregar otro plato, 2 si quiere ver el total de pago:     ")
         if (option == "1"):
             self.pedir(delivery)
             self.plata += self.menu[plato][1]
         else:
-            print("El pago es igual a $"+ str(self.plata + delivery))
+            print("")
+            print("El pago por el pedido es de: $"+ str(self.plata) + "\n Pago por domicilio: $" + str(delivery) + "\n Total: $", str(self.plata + delivery))
 
 
 class User:
