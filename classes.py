@@ -21,13 +21,6 @@ class Restaurant:
         self.confirmation(num, delivery)
         
         
-        
-
-    ##def cobro_total (self, plato):
-
-        ##a= self.menu[plato][1]
-        ##print("El pago es igual a "+str(a))
-    
     def descrip_plato (self, plato):
         print("El " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
     
