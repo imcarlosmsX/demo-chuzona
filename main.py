@@ -6,13 +6,19 @@ name = User("carlos")
 
 nombre = name.login()
 
+direccion_destino = str (nombre[1])
+
 ##domicilio = Delivery()
 
 ##domicilio.precio_dom()
 
-prueba = Delivery()
-hola =prueba.hallar_dist(6.33607, -75.56119,6.17136,-75.58825)
-print(hola)
+lista_dic = {"Unico": [6.33607 , -75.56119],"Uninorte": [6.17136 , -75.58825]}
+
+direcciones = Delivery(lista_dic)
+
+
+precio_domi = direcciones.hallar_dist(direccion_destino)
+
 
 
 print("Bienvenido a la Chuzona señor(a) " + nombre[0])
@@ -39,9 +45,8 @@ xd = {
         "10": ["Mazorca desgranada especial", 16000, 
         "Mazorca americana desgranada, trozos de tocineta, queso costeño rayado y papitas paja acompañado con salsa tártara."]
     }
-
 a = Restaurant(xd)
-a.pedir(hola)
+a.pedir(precio_domi)
 
-# %%
+
 
