@@ -22,7 +22,7 @@ class Restaurant:
         
         
     def descrip_plato (self, plato):
-        print("El " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
+        print("El plato" + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
     
     def confirmation (self, plato, delivery):
 
