@@ -73,6 +73,8 @@ class Delivery:
         lat2= self.direcciones["Unico"][0]
         lon2= self.direcciones["Unico"][1]
 
+        ## haversine - halla la distancia entre las dos coordenadas.
+
         rad = math.pi/180
         self.dta_lat = lat2-lat1
         self.dta_lon = lon2-lon1
