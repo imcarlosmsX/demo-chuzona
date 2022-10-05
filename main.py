@@ -23,7 +23,7 @@ precio_domi = direcciones.hallar_dist(direccion_destino)
 
 print("Bienvenido a la Chuzona señor(a) " + nombre[0])
 
-xd = {
+menu = {
         "1": ["Mazorca desgranada", 14000, 
         "Mazorca americana desgranada,queso costeño rayado y papitas paja acompañado con salsa tártara."], 
         "2": ["Desgranado de carne", 18000, 
@@ -45,7 +45,7 @@ xd = {
         "10": ["Mazorca desgranada especial", 16000, 
         "Mazorca americana desgranada, trozos de tocineta, queso costeño rayado y papitas paja acompañado con salsa tártara."]
     }
-a = Restaurant(xd)
+a = Restaurant(menu)
 a.pedir(precio_domi)
 
 
