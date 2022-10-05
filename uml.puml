@@ -1,0 +1,25 @@
+@startuml
+class Restaurant {
+menu: str
+pedir (delivery)
+descrip_plato (plato)
+confirmation (plato, delivery)
+agregar (plato, delivery)
+}
+
+class User {
+name: str
+direccion: str
+login (name,direccion)
+}
+class Delivery {
+direcciones: str
+hallar_dist (direc)
+
+}
+
+User --* Delivery
+Restaurant *-- Delivery
+User -- Restaurant
+
+@enduml
