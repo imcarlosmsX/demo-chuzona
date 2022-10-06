@@ -1,5 +1,4 @@
 
-from ctypes.wintypes import HLOCAL
 import math
 
 class Restaurant:

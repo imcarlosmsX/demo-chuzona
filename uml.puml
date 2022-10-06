@@ -1,25 +1,30 @@
 @startuml
-class Restaurant {
-menu: str
-pedir (delivery)
+class Restaurante {
+menu: dict
+direccion_r: str
+pedido (delivery)
 descrip_plato (plato)
-confirmation (plato, delivery)
+confirmar (plato, delivery)
 agregar (plato, delivery)
 }
 
-class User {
-name: str
-direccion: str
-login (name,direccion)
+class Usuario {
+correo: str
+contraseña: str
+nombre: str
+direccion_u: str
+tipo_pago:str
+login (correo,contraseña)
+
 }
 class Delivery {
-direcciones: str
-hallar_dist (direc)
+direcciones: lista
+hallar_dist (direccion_r,direccion_u)
 
 }
 
-User --* Delivery
-Restaurant *-- Delivery
-User -- Restaurant
+Usuario --* Delivery
+Restaurante --* Delivery
+Usuario "*"--"1" Restaurante
 
 @enduml
