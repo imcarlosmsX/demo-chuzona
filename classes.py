@@ -84,8 +84,11 @@ class Delivery:
         elif( dist > 1 and dist < 5):
                 precio_dom = 6000
                 
-        elif(dist >= 5.0):
+        elif(dist >= 5.0 and dist <20):
                     precio_dom = 8000
+
+        else:
+            raise Exception("demasiado lejos mirey")
 
         return precio_dom
         
