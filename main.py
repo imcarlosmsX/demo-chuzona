@@ -33,11 +33,8 @@ coord = df["coordenadas"]
 
 precio_domi= Delivery()
 
-print(coord)
-
 domicilio = precio_domi.hallar_dist(coord[0][0], coord[0][1])
 
-print(domicilio)
 
 print("Bienvenido a la Chuzona señor(a) " + nombre[0])
 
