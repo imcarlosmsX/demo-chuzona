@@ -64,8 +64,8 @@ class Delivery:
         
         lat1= latitud
         lon1= longitud
-        lat2= 10.9888343
-        lon2= -74.8145862
+        lat2= 10.98934495
+        lon2= -74.81377060046907
 
         ## haversine - halla la distancia entre las dos coordenadas.
 
@@ -76,7 +76,9 @@ class Delivery:
         in_raiz = (math.sin(self.dta_lat*rad/2)**2 + math.cos(lat1*rad)*math.cos(lat2*rad)*math.sin(self.dta_lon*rad/2)**2)
         dist = 2*radio*math.asin(math.sqrt(in_raiz))
         precio_dom = 6000
-        if (dist <= 1.0): 
+        if (dist == 0):
+            precio_dom = 0
+        elif (dist <= 1.0): 
             precio_dom = 3000
             
         elif( dist > 1 and dist < 5):
