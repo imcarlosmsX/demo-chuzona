@@ -1,22 +1,41 @@
 #%%
 from classes import Restaurant, User, Delivery
+import pandas as pd
+from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
+
+
 
 name = User("carlos")
 
 nombre = name.login()
 
-direccion_destino = str (nombre[1])
-
 ##domicilio = Delivery()
 
 ##domicilio.precio_dom()
 
-lista_dic = {"Unico": [6.33607 , -75.56119],"Uninorte": [6.17136 , -75.58825]}
 
-direcciones = Delivery(lista_dic)
+direccion_destino = input("ingrese la direccion que desea:          ")
 
 
-precio_domi = direcciones.hallar_dist(direccion_destino)
+df = pd.DataFrame({'direcc':
+            [direccion_destino]})
+
+geolocartor = Nominatim(user_agent = "xd")
+geocode = RateLimiter(geolocartor.geocode, min_delay_seconds = 1)
+
+df["location"] = df["direcc"].apply(geocode)
+df["coordenadas"] = df["location"].apply(lambda x: (x.latitude, x.longitude))
+
+coord = df["coordenadas"]
+
+
+
+precio_domi= Delivery()
+
+domicilio = precio_domi.hallar_dist(coord[0][0], coord[0][1])
+
+print(domicilio)
 
 
 
@@ -45,7 +64,7 @@ menu = {
         "Mazorca americana desgranada, trozos de tocineta, queso costeño rayado y papitas paja acompañado con salsa tártara."]
     }
 a = Restaurant(menu)
-a.pedir(precio_domi)
+a.pedir(domicilio)
 
 
 

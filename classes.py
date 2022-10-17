@@ -1,6 +1,8 @@
 
 import math
 
+from numpy import double
+
 class Restaurant:
     def __init__(self, menu):
         self.menu = menu
@@ -49,23 +51,37 @@ class User:
 
     def login(self):
         name = input("Ingrese su nombre:     ")
-        direccion = input("Ingrese su dirección de residencia:      ")
-        juntar = [name, direccion]
-        return juntar
+        return name
 
 
 class Delivery: 
 
-    def __init__(self, direcciones):
-        self.direcciones = direcciones
+    def __init__(self) -> None:
+        pass
     
-    
-    def hallar_dist (self, direc):
+    def direc_to_dist(self, dirrec):
 
-        lat1= self.direcciones[direc][0]
-        lon1= self.direcciones[direc][1]
-        lat2= self.direcciones["Unico"][0]
-        lon2= self.direcciones["Unico"][1]
+        import pandas as pd
+        from geopy.geocoders import Nominatim
+        from geopy.extra.rate_limiter import RateLimiter
+        geolocartor = Nominatim(user_agent = ".")
+        geocode = RateLimiter(geolocartor.geocode, min_delay_seconds = 1)
+        df = pd.DataFrame
+        df ["dirrec"] = [dirrec]
+        df ["location"] = df["dirrec"].apply(geocode)
+        df ["coords"] = df["location"].apply(lambda x: (x.latitude, x.longitude))
+        mi_lista = []
+        mi_lista = df ["coords"]
+        return mi_lista ## direcction= [10.99, -74]
+        
+
+    def hallar_dist (self, latitud, longitud):
+
+        
+        lat1= float(latitud)
+        lon1= float(longitud)
+        lat2= 10.9888343
+        lon2= -74.8145862
 
         ## haversine - halla la distancia entre las dos coordenadas.
 
