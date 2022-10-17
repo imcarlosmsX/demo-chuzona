@@ -58,28 +58,12 @@ class Delivery:
 
     def __init__(self) -> None:
         pass
-    
-    def direc_to_dist(self, dirrec):
-
-        import pandas as pd
-        from geopy.geocoders import Nominatim
-        from geopy.extra.rate_limiter import RateLimiter
-        geolocartor = Nominatim(user_agent = ".")
-        geocode = RateLimiter(geolocartor.geocode, min_delay_seconds = 1)
-        df = pd.DataFrame
-        df ["dirrec"] = [dirrec]
-        df ["location"] = df["dirrec"].apply(geocode)
-        df ["coords"] = df["location"].apply(lambda x: (x.latitude, x.longitude))
-        mi_lista = []
-        mi_lista = df ["coords"]
-        return mi_lista ## direcction= [10.99, -74]
-        
 
     def hallar_dist (self, latitud, longitud):
 
         
-        lat1= float(latitud)
-        lon1= float(longitud)
+        lat1= latitud
+        lon1= longitud
         lat2= 10.9888343
         lon2= -74.8145862
 
@@ -91,12 +75,15 @@ class Delivery:
         radio = 6373.795477596
         in_raiz = (math.sin(self.dta_lat*rad/2)**2 + math.cos(lat1*rad)*math.cos(lat2*rad)*math.sin(self.dta_lon*rad/2)**2)
         dist = 2*radio*math.asin(math.sqrt(in_raiz))
-        if (dist < 1.0): 
+        precio_dom = 6000
+        if (dist <= 1.0): 
             precio_dom = 3000
-        else:
-            if( 1.0 > dist <  5.0):
+            
+        elif( dist > 1 and dist < 5):
                 precio_dom = 6000
-            else:
-                if(dist > 5.0):
+                
+        elif(dist >= 5.0):
                     precio_dom = 8000
+
         return precio_dom
+        
