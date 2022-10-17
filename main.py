@@ -19,7 +19,7 @@ direccion_destino = input("ingrese la direccion que desea:          ")
 
 
 df = pd.DataFrame({'direcc':
-            [direccion_destino]})
+            [direccion_destino + ", Barranquilla, Atlantico"]})
 
 geolocartor = Nominatim(user_agent = "xd")
 geocode = RateLimiter(geolocartor.geocode, min_delay_seconds = 1)
@@ -32,6 +32,8 @@ coord = df["coordenadas"]
 
 
 precio_domi= Delivery()
+
+print(coord)
 
 domicilio = precio_domi.hallar_dist(coord[0][0], coord[0][1])
 
