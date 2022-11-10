@@ -1,6 +1,5 @@
 
-import math
-
+import math, json
 from numpy import double
 
 class Restaurant:
@@ -64,9 +63,10 @@ class Delivery:
         
         lat1= latitud
         lon1= longitud
-        lat2= 10.98934495
-        lon2= -74.81377060046907
-
+        with open("settings.json") as settings:
+            coords = json.load(settings)
+            lat2= coords ["coords"][0]
+            lon2= coords ["coords"][1]
         ## haversine - halla la distancia entre las dos coordenadas.
 
         rad = math.pi/180
