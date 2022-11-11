@@ -56,7 +56,7 @@ class Restaurant:
             print("")
             print("El pago por el pedido es de: $"+ str(self.plata) + "\n Pago por domicilio: $" + str(delivery) + "\n Total: $", str(self.plata + delivery))
 
-            file = open("info_clientes.txt", "w")
+            file = open("info_clientes.txt", "a")
             file.write(name + ", " + str(self.lista) + ", " + str(self.plata + delivery) + ", " + lugar)
         
 

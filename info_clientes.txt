@@ -1,1 +1,3 @@
+NOMBRE DEL CLIENTE, PLATOS ORDENADOS, TOTAL A PAGAR, DIRECCION DEL CLIENTE.
+
 carlos, Mazorca desgranada especial — , 24000, Uninorte
