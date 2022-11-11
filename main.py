@@ -10,18 +10,13 @@ name = User("carlos")
 
 nombre = name.login()
 
-##domicilio = Delivery()
-
-##domicilio.precio_dom()
-
-
 direccion_destino = input("ingrese la direccion que desea:          ")
 
 
 df = pd.DataFrame({'direcc':
             [direccion_destino + ", Barranquilla, Atlantico"]})
 
-geolocartor = Nominatim(user_agent = "xd")
+geolocartor = Nominatim(user_agent = "chuzona")
 geocode = RateLimiter(geolocartor.geocode, min_delay_seconds = 1)
 
 df["location"] = df["direcc"].apply(geocode)
@@ -36,10 +31,13 @@ precio_domi= Delivery()
 domicilio = precio_domi.hallar_dist(coord[0][0], coord[0][1])
 
 
-print("Bienvenido a la Chuzona señor(a) " + nombre[0])
+print("Bienvenido a la Chuzona señor(a) " + nombre)
 with open("menu.json") as menu:
     listado = json.load(menu)
     a = Restaurant(listado)
-    a.pedir(domicilio)
+    temp_info = a.pedir(domicilio)
+    file = open("info_clientes.txt", "a")
+    file.write( str (nombre) + "," + str (temp_info[0]) + ", " + str (temp_info[1]) + "," + str(direccion_destino) + "\n")
+
 
 # %%
