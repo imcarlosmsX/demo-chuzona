@@ -7,10 +7,11 @@ class Restaurant:
     def __init__(self, menu):
         self.menu = menu
         self.plata = 0
-        self.contador = 1
+        self.contador = 0
+        self.lista = ""
 
 #Esta funcion se encarga de recibir el numero del plato que va consumir el cliente.
-    def pedir (self, delivery):
+    def pedir (self, delivery, name, lugar):
         print("Menú del restaurante.")
         print("")
         for i in self.menu:
@@ -20,40 +21,44 @@ class Restaurant:
         print("")
         self.plata += self.menu[num][1]
         self.descrip_plato(num)
-        x = self.confirmation(num, delivery)
-        info = [self.menu[i][0], x + delivery]
-        return info
+        self.lista += self.menu[num][0] + " — "
+        self.confirmation(num, delivery, name, lugar)
+        
         
 #Dependiendo del numero ingresado por el cliente se le va a suministrar una breve descripcion del plato mediante el uso de diccionarios.    
     def descrip_plato (self, plato):
         print("El plato " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
     
 #Esta funcion le permite al usuario confirmar el pedido o regresar a las opciones anteriores sin guardar cambios.
-    def confirmation (self, plato, delivery):
+    def confirmation (self, plato, delivery, name, lugar):
 
         print("")
         option = input("Digite 1 si quiere confirmar el pedido, 2 si quiere volver al menú anterior y cancelar todo el pedido:      ")
         if (option == "2"):
             self.plata = 0
-            self.pedir(delivery)
+            self.pedir(delivery, name, lugar)
         else:
-            x = self.agregar(plato, delivery)
-            return x
+            self.agregar(plato, delivery, name, lugar)
+            
 
 #La funcion agregar permite al usuario agregar otro plato a la cuenta o ver directamente su factura.
-    def agregar (self, plato, delivery):
+    def agregar (self, plato, delivery, name, lugar):
         print("")
         option = input("Digite 1 si quiere agregar otro plato, 2 si quiere ver el total de pago:     ")
         if (option == "1"):
-            self.pedir(delivery)
+            self.pedir(delivery, name, lugar)
             self.plata += self.menu[plato][1]
-            self.contador = self.contador + 1
-            return self.plata
+            
+
+            
             
         else:
             print("")
             print("El pago por el pedido es de: $"+ str(self.plata) + "\n Pago por domicilio: $" + str(delivery) + "\n Total: $", str(self.plata + delivery))
-            return self.plata
+
+            file = open("info_clientes.txt", "w")
+            file.write(name + ", " + str(self.lista) + ", " + str(self.plata + delivery) + ", " + lugar)
+        
 
 class User:
     def __init__(self, name):

@@ -35,9 +35,10 @@ print("Bienvenido a la Chuzona señor(a) " + nombre)
 with open("menu.json") as menu:
     listado = json.load(menu)
     a = Restaurant(listado)
-    temp_info = a.pedir(domicilio)
-    file = open("info_clientes.txt", "a")
-    file.write( str (nombre) + "," + str (temp_info[0]) + ", " + str (temp_info[1]) + "," + str(direccion_destino) + "\n")
+    a.pedir(domicilio, nombre, direccion_destino)
+
+    ##file = open("info_clientes.txt", "w")
+    ##file.write( str (nombre) + "," + str (temp_info[0]) + ", " + str (temp_info[1] + domicilio) + "," + str(direccion_destino) + "\n")
 
 
 # %%
