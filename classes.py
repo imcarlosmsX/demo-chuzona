@@ -58,6 +58,7 @@ class Restaurant:
 
             file = open("info_clientes.txt", "a")
             file.write(name + ", " + str(self.lista) + ", " + str(self.plata + delivery) + ", " + lugar)
+            file.write("\n")
         
 
 class User:
