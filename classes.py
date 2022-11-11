@@ -2,12 +2,14 @@
 import math, json
 from numpy import double
 
+#Clase  encargada de realizar diferentes funciones dependiendo de la manipulacion del diccionario que almacena el menú.
 class Restaurant:
     def __init__(self, menu):
         self.menu = menu
         self.plata = 0
         self.contador = 1
 
+#Esta funcion se encarga de recibir el numero del plato que va consumir el cliente.
     def pedir (self, delivery):
         print("Menú del restaurante.")
         print("")
@@ -22,10 +24,11 @@ class Restaurant:
         info = [self.menu[i][0], x + delivery]
         return info
         
-        
+#Dependiendo del numero ingresado por el cliente se le va a suministrar una breve descripcion del plato mediante el uso de diccionarios.    
     def descrip_plato (self, plato):
         print("El plato " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
     
+#Esta funcion le permite al usuario confirmar el pedido o regresar a las opciones anteriores sin guardar cambios.
     def confirmation (self, plato, delivery):
 
         print("")
@@ -36,7 +39,8 @@ class Restaurant:
         else:
             x = self.agregar(plato, delivery)
             return x
-    
+
+#La funcion agregar permite al usuario agregar otro plato a la cuenta o ver directamente su factura.
     def agregar (self, plato, delivery):
         print("")
         option = input("Digite 1 si quiere agregar otro plato, 2 si quiere ver el total de pago:     ")
@@ -59,12 +63,14 @@ class User:
         name = input("Ingrese su nombre:     ")
         return name
 
-
+#Esta clase es la encargada de determinar la distancia entre el restaurante y la direccion ingresada por el usuario para poder
+#determinar un precio apropiado para el domicilio.
 class Delivery: 
 
     def __init__(self) -> None:
         pass
 
+#funcion encargada de determinar la distancia entre 2 coordenadas mediante el metodo de haversine.
     def hallar_dist (self, latitud, longitud):
 
         
@@ -74,8 +80,6 @@ class Delivery:
             coords = json.load(settings)
             lat2= coords ["coords"][0]
             lon2= coords ["coords"][1]
-        ## haversine - halla la distancia entre las dos coordenadas.
-
         rad = math.pi/180
         self.dta_lat = lat2-lat1
         self.dta_lon = lon2-lon1
