@@ -2,7 +2,7 @@
 import math, json
 from numpy import double
 
-#Clase  encargada de realizar diferentes funciones dependiendo de la manipulacion del diccionario que almacena el menú.
+#Clase encargada de realizar diferentes funciones dependiendo de la manipulación del diccionario que almacena el menú.
 class Restaurant:
     def __init__(self, menu):
         self.menu = menu
@@ -25,11 +25,12 @@ class Restaurant:
         self.confirmation(num, delivery, name, lugar)
         
         
-#Dependiendo del numero ingresado por el cliente se le va a suministrar una breve descripcion del plato mediante el uso de diccionarios.    
+#Método encargado de que según el número que ingrese el cliente, se le suministre una breve descripción del plato seleccionado mediante
+# el uso de diccionarios.
     def descrip_plato (self, plato):
         print("El plato " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
     
-#Esta funcion le permite al usuario confirmar el pedido o regresar a las opciones anteriores sin guardar cambios.
+#Método que le permite al usuario confirmar el pedido o regresar a las opciones anteriores sin guardar cambios.
     def confirmation (self, plato, delivery, name, lugar):
 
         print("")
@@ -41,17 +42,14 @@ class Restaurant:
             self.agregar(plato, delivery, name, lugar)
             
 
-#La funcion agregar permite al usuario agregar otro plato a la cuenta o ver directamente su factura.
+#Método que permite al usuario agregar otro plato a la cuenta o ver directamente su factura.
     def agregar (self, plato, delivery, name, lugar):
         print("")
         option = input("Digite 1 si quiere agregar otro plato, 2 si quiere ver el total de pago:     ")
         if (option == "1"):
             self.pedir(delivery, name, lugar)
             self.plata += self.menu[plato][1]
-            
-
-            
-            
+                    
         else:
             print("")
             print("El pago por el pedido es de: $"+ str(self.plata) + "\n Pago por domicilio: $" + str(delivery) + "\n Total: $", str(self.plata + delivery))
@@ -60,7 +58,8 @@ class Restaurant:
             file.write(name + ", " + str(self.lista) + ", " + str(self.plata + delivery) + ", " + lugar)
             file.write("\n")
         
-
+#Clase encargada de almacenar datos importantes de cada cliente, como su nombre y dirección para posteriormente ser enviados 
+# a un archivo txt que contiene también el plato que seleccionó y el precio total de su pedido. 
 class User:
     def __init__(self, name):
         self.name= name
@@ -69,14 +68,14 @@ class User:
         name = input("Ingrese su nombre:     ")
         return name
 
-#Esta clase es la encargada de determinar la distancia entre el restaurante y la direccion ingresada por el usuario para poder
-#determinar un precio apropiado para el domicilio.
+#clase encargada de determinar la distancia entre el restaurante y la dirección ingresada por el usuario para poder determinar 
+# un precio apropiado para el domicilio.
 class Delivery: 
 
     def __init__(self) -> None:
         pass
 
-#funcion encargada de determinar la distancia entre 2 coordenadas mediante el metodo de haversine.
+#función encargada de determinar la distancia entre 2 coordenadas mediante el método de haversine.
     def hallar_dist (self, latitud, longitud):
 
         
