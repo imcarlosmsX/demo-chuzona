@@ -1,25 +1,25 @@
 @startuml
-class Restaurante {
+
+Class Restaurante {
 menu: dict
 direccion_r: str
-pedido (delivery)
+pedir (delivery)
 descrip_plato (plato)
-confirmar (plato, delivery)
+confirmacion (plato, delivery)
 agregar (plato, delivery)
 }
 
-class Usuario {
-correo: str
-contraseña: str
+Class Usuario {
 nombre: str
 direccion_u: str
-tipo_pago:str
-login (correo,contraseña)
-
+login ()
 }
-class Delivery {
-direcciones: lista
-hallar_dist (direccion_r,direccion_u)
+
+Class Delivery {
+
+direccion_u: str
+direccion_r: str
+hallar_dist (latitud, longitud)
 
 }
 
