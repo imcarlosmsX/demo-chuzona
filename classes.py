@@ -23,7 +23,7 @@ class Restaurant:
         self.descrip_plato(num)
         self.lista += self.menu[num][0] + " — "
         self.confirmation(num, delivery, name, lugar)
-        
+         
         
 #Método encargado de que según el número que ingrese el cliente, se le suministre una breve descripción del plato seleccionado mediante
 # el uso de diccionarios.
@@ -54,10 +54,17 @@ class Restaurant:
             print("")
             print("El pago por el pedido es de: $"+ str(self.plata) + "\n Pago por domicilio: $" + str(delivery) + "\n Total: $", str(self.plata + delivery))
 
+            comments = self.comments()
             file = open("info_clientes.txt", "a")
-            file.write(name + ", " + str(self.lista) + ", " + str(self.plata + delivery) + ", " + lugar)
+            file.write(name + ", " + str(self.lista) + ", " + str(self.plata + delivery) + ", " + lugar + ", " + comments)
             file.write("\n")
-        
+##Método que se usa para agregar comentarios extras al pedido y confirmarlo.
+    def comments (self):
+        print("")
+        comentarios = input("Ingrese comentarios extras sobre su pedido y pulse ENTER para confirmarlo. (Ejem: Sin verdura, sin cebolla, etc.):        ")
+        return comentarios
+
+
 #Clase encargada de almacenar datos importantes de cada cliente, como su nombre y dirección para posteriormente ser enviados 
 # a un archivo txt que contiene también el plato que seleccionó y el precio total de su pedido. 
 class User:

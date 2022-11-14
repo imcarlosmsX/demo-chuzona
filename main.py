@@ -12,9 +12,10 @@ nombre = name.login()
 
 direccion_destino = input("ingrese la direccion que desea:          ")
 
-
-df = pd.DataFrame({'direcc':
-            [direccion_destino + ", Barranquilla, Atlantico"]})
+with open("settings.json") as settings:
+    ciudad = json.load(settings)
+    df = pd.DataFrame({'direcc':
+    [direccion_destino + str(ciudad["ciudad"][0])]})
 
 geolocartor = Nominatim(user_agent = "chuzona")
 geocode = RateLimiter(geolocartor.geocode, min_delay_seconds = 1)
@@ -35,10 +36,9 @@ print("Bienvenido a la Chuzona señor(a) " + nombre)
 with open("menu.json") as menu:
     listado = json.load(menu)
     a = Restaurant(listado)
-    a.pedir(domicilio, nombre, direccion_destino)
+    pedido = a.pedir(domicilio, nombre, direccion_destino)
 
-    ##file = open("info_clientes.txt", "w")
-    ##file.write( str (nombre) + "," + str (temp_info[0]) + ", " + str (temp_info[1] + domicilio) + "," + str(direccion_destino) + "\n")
+
 
 
 # %%
