@@ -8,3 +8,5 @@ Jesus De la Cruz, Desgranado de carne � , 24000, Calle 70b #39-178
 Carlos Andres, Mazorca desgranada — , 17000, Torres De San Jose
 Carlos, Mazorca desgranada — Mazorca desgranada — Desgranado de carne — , 54000, Uninorte, Sin verdura.
 xd, Mazorca desgranada — Mazorca desgranada — Mazorca desgranada — , 45000, Torres De San Jose, 
+Carlos, Mazorca desgranada — , 22000, Uninorte, 
+Carlos, Mazorca desgranada — , 27000, Uninorte, /home/sandovalcarlos/miniconda3/bin/python /home/sandovalcarlos/oop_202230/demo-chuzona-3/classes.py

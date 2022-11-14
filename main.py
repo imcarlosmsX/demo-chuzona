@@ -33,11 +33,11 @@ domicilio = precio_domi.hallar_dist(coord[0][0], coord[0][1])
 
 
 print("Bienvenido a la Chuzona señor(a) " + nombre)
-with open("menu.json") as menu:
-    listado = json.load(menu)
-    a = Restaurant(listado)
-    pedido = a.pedir(domicilio, nombre, direccion_destino)
-
+with open("menu.json") as menu_comida:
+    listado_comida = json.load(menu_comida)
+    comida = Restaurant(listado_comida)
+    pedido = comida.pedir(domicilio, nombre, direccion_destino)
+        
 
 
 

@@ -20,13 +20,33 @@ class Restaurant:
         num = str(input("Digite el número de producto que desea pedir.      "))
         print("")
         self.plata += self.menu[num][1]
-        self.descrip_plato(num)
+        if (num != 11 or num != 12 or num != 13 or num != 14 or num != 15):
+            self.descrip_plato(num)
         self.lista += self.menu[num][0] + " — "
         self.confirmation(num, delivery, name, lugar)
-         
-        
+
+    """
+
+    def bebidas (self):
+        print("")
+        print("Finalmente: ¿Qué bebida desea?")
+        print("")
+        for i in self.menu:
+            print(i + ". " + self.menu[i][0]+"   ---    $"+ str (self.menu[i][1]))
+        print("")
+        num = str(input("Digite el número de producto que desea pedir.      "))
+        self.plata += self.menu[num][1]
+        self.lista += self.menu[num][0] + " — "
+        print("")
+        option = input("Digite 1 si quiere agregar otro plato, 2 si quiere ver el total de pago:     ")
+        if (option ==  "1"):
+            self.bebidas()
+        return int (self.plata)
+        """
+
 #Método encargado de que según el número que ingrese el cliente, se le suministre una breve descripción del plato seleccionado mediante
 # el uso de diccionarios.
+
     def descrip_plato (self, plato):
         print("El plato " + str(self.menu[plato][0])+ " trae: " + str(self.menu[plato][2]))
     
