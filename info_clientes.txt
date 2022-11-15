@@ -10,3 +10,5 @@ Carlos, Mazorca desgranada — Mazorca desgranada — Desgranado de carne — , 
 xd, Mazorca desgranada — Mazorca desgranada — Mazorca desgranada — , 45000, Torres De San Jose, 
 Carlos, Mazorca desgranada — , 22000, Uninorte, 
 Carlos, Mazorca desgranada — , 27000, Uninorte, /home/sandovalcarlos/miniconda3/bin/python /home/sandovalcarlos/oop_202230/demo-chuzona-3/classes.py
+Carlos, Botella de Agua — , 11500, Uninorte, xd
+Agustin, Botella de Agua — Sprite — , 16500, Uninorte, sin gas

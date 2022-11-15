@@ -20,7 +20,7 @@ class Restaurant:
         num = str(input("Digite el número de producto que desea pedir.      "))
         print("")
         self.plata += self.menu[num][1]
-        if (num != 11 or num != 12 or num != 13 or num != 14 or num != 15):
+        if (int (num) < 10):
             self.descrip_plato(num)
         self.lista += self.menu[num][0] + " — "
         self.confirmation(num, delivery, name, lugar)
