@@ -1,29 +1,29 @@
     {
 
         "1": ["Mazorca desgranada", 14000, 
-        "Mazorca americana desgranada,queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Mazorca americana desgranada,queso costeño rayado y papitas paja acompañado con salsa tártara.", 1], 
         "2": ["Desgranado de carne", 18000, 
-        "Carne de res, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Carne de res, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 2], 
         "3": ["Desgranado de pollo", 18000, 
-        "Pechuga de pollo, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Pechuga de pollo, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 3], 
         "4": ["Desgranado mixto", 18000, 
-        "Carne de res y pollo, acompañadas de bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Carne de res y pollo, acompañadas de bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 4], 
         "5": ["Desgranado combinado", 21000, 
-        "Butifarra, chorizo, carne de res, pollo,lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Butifarra, chorizo, carne de res, pollo,lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 5], 
         "6": ["Desgranado ranchero especial", 22000, 
-        "Salchicha Ranchera, pollo, mazorca, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Salchicha Ranchera, pollo, mazorca, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 6], 
         "7": ["Desgranado suizo especial", 24000, 
-        "Salchiza Suiza, Pollo, mazorca, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Salchiza Suiza, Pollo, mazorca, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 7], 
         "8": ["Desgranado de la casa", 28000, 
-        "Salchicha Ranchera, butifarra, pollo, carne de res, mazorca, tocineta, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Salchicha Ranchera, butifarra, pollo, carne de res, mazorca, tocineta, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 8], 
         "9": ["Desgranado especial de la costa", 24000, 
-        "Butifarra, chorizo, carne de res, pollo, mazorca, tocineta, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara."], 
+        "Butifarra, chorizo, carne de res, pollo, mazorca, tocineta, bollo limpio, lechuga, queso costeño rayado y papitas paja acompañado con salsa tártara.", 9], 
         "10": ["Mazorca desgranada especial", 16000, 
-        "Mazorca americana desgranada, trozos de tocineta, queso costeño rayado y papitas paja acompañado con salsa tártara."],
-        "12": ["Cocacola", 5000, ""], 
-        "13": ["Manzana Postobon", 5000, ""], 
-        "14": ["Sprite", 5000, ""], 
-        "15": ["Botella de Agua", 3500, ""]
+        "Mazorca americana desgranada, trozos de tocineta, queso costeño rayado y papitas paja acompañado con salsa tártara.", 10],
+        "12": ["Cocacola", 5000, "", 12], 
+        "13": ["Manzana Postobon", 5000, "", 13], 
+        "14": ["Sprite", 5000, "", 14], 
+        "15": ["Botella de Agua", 2500, "", 15]
         
 
 

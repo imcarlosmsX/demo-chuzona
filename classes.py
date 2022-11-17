@@ -18,31 +18,18 @@ class Restaurant:
             print(i + ". " + self.menu[i][0]+"   ---    $"+ str (self.menu[i][1]))
         print("")
         num = str(input("Digite el número de producto que desea pedir.      "))
+        with open("menu.json") as menu:
+            platos = json.load(menu)
+            with open("settings.json") as settings:
+                max_platos = json.load(settings)
+                while (int(num) < int(platos["1"][3]) or int(num) > int(max_platos["max_platos"][0])):
+                    num = str(input("Ha digitado un número inválido, vuelva a elegir el producto que desea.      "))
         print("")
         self.plata += self.menu[num][1]
         if (int (num) < 10):
             self.descrip_plato(num)
         self.lista += self.menu[num][0] + " — "
         self.confirmation(num, delivery, name, lugar)
-
-    """
-
-    def bebidas (self):
-        print("")
-        print("Finalmente: ¿Qué bebida desea?")
-        print("")
-        for i in self.menu:
-            print(i + ". " + self.menu[i][0]+"   ---    $"+ str (self.menu[i][1]))
-        print("")
-        num = str(input("Digite el número de producto que desea pedir.      "))
-        self.plata += self.menu[num][1]
-        self.lista += self.menu[num][0] + " — "
-        print("")
-        option = input("Digite 1 si quiere agregar otro plato, 2 si quiere ver el total de pago:     ")
-        if (option ==  "1"):
-            self.bebidas()
-        return int (self.plata)
-        """
 
 #Método encargado de que según el número que ingrese el cliente, se le suministre una breve descripción del plato seleccionado mediante
 # el uso de diccionarios.
@@ -126,11 +113,17 @@ class Delivery:
             elif (dist <= 1.0): 
                 precio_dom = domis ["domis"][0]
                 
-            elif( dist > 1 and dist < 5):
+            elif( dist >= 1 and dist <= 5):
                 precio_dom = domis ["domis"][1]
                     
-            elif(dist >= 5.0 and dist <20):
+            elif(dist >= 5.0 and dist <= 7):
                 precio_dom = domis ["domis"][2]
+            
+            elif(dist >= 7.0 and dist < 9.0):
+                precio_dom = domis ["domis"][3]
+
+            elif(dist >= 7.0 and dist <= 10.0):
+                precio_dom = domis ["domis"][4]
 
             else:
                 raise Exception("La distancia del pedido sobrepasa la capacidad de envío del restaurante.")

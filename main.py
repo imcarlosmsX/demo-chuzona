@@ -1,4 +1,9 @@
+
+
+
+
 #%%
+
 from classes import Restaurant, User, Delivery
 import pandas as pd
 from geopy.geocoders import Nominatim
@@ -37,7 +42,6 @@ with open("menu.json") as menu_comida:
     listado_comida = json.load(menu_comida)
     comida = Restaurant(listado_comida)
     pedido = comida.pedir(domicilio, nombre, direccion_destino)
-        
 
 
 
