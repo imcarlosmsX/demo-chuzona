@@ -12,7 +12,7 @@ que ya está predefinida.
 
 
 
-# GUÍA para los archivos .json
+# GUÍA configuraciones del programa (archivos .json)
 
 
 ## settings.json: 
