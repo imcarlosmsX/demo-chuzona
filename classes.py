@@ -26,7 +26,7 @@ class Restaurant:
                     num = str(input("Ha digitado un número inválido, vuelva a elegir el producto que desea.      "))
         print("")
         self.plata += self.menu[num][1]
-        if (int (num) < 10):
+        if (int (num) < 11):
             self.descrip_plato(num)
         self.lista += self.menu[num][0] + " — "
         self.confirmation(num, delivery, name, lugar)
