@@ -22,7 +22,7 @@ class Restaurant:
             platos = json.load(menu)
             with open("settings.json") as settings:
                 max_platos = json.load(settings)
-                while (int(num) < int(platos["1"][3]) or int(num) > int(max_platos["max_platos"][0])):
+                while (int(num) < int(platos["1"][3]) or int(num) > int(max_platos["max_productos"][0])):
                     num = str(input("Ha digitado un número inválido, vuelva a elegir el producto que desea.      "))
         print("")
         self.plata += self.menu[num][1]
