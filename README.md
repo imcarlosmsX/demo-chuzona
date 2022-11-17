@@ -12,9 +12,10 @@ que ya está predefinida.
 
 
 
-##GUÍA para los archivos .json
+# GUÍA para los archivos .json
 
-settings.json: 
+
+## settings.json: 
 
 En la parte de "coords" se deben establecer las coordenadas del restaurante. LATITUD Y LONGITUD.
 
@@ -30,7 +31,7 @@ Pocisión [4]: Entre 10KM y 15KM de distancia.
 En la parte de "ciudad" se configura la ciudad donde se encuentra el restaurante, como se indica en el ejemplo.
 
 
-menu.json: 
+## menu.json: 
 
 Se trata de un diccionario que permite configurar el menú del restaurante.
 
