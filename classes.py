@@ -113,16 +113,16 @@ class Delivery:
             elif (dist <= 1.0): 
                 precio_dom = domis ["domis"][0]
                 
-            elif( dist >= 1 and dist <= 5):
+            elif( dist >= 1 and dist < 5):
                 precio_dom = domis ["domis"][1]
                     
-            elif(dist >= 5.0 and dist <= 7):
+            elif(dist >= 5.0 and dist < 7):
                 precio_dom = domis ["domis"][2]
             
-            elif(dist >= 7.0 and dist < 9.0):
+            elif(dist >= 7.0 and dist < 10.0):
                 precio_dom = domis ["domis"][3]
 
-            elif(dist >= 7.0 and dist <= 10.0):
+            elif(dist >= 10.0 and dist <= 15.0):
                 precio_dom = domis ["domis"][4]
 
             else:
